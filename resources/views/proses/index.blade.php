@@ -70,6 +70,54 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <h2 class="text-xl text-slate-700">Tabel Vektor S </h2>
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Vektor S
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Nilai
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($datas as $key => $item)
+                                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                                        <td class="px-6 py-4">S{{ $key+1 }}</td>
+                                        <td class="px-6 py-4">{{ $item['bobot'] }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 class="text-xl text-slate-700">Perangkingan </h2>
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Rank
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Total
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($ranks as $key => $item)
+                                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                                        <td class="px-6 py-4">{{ $item['id'] }}</td>
+                                        <td class="px-6 py-4">{{ $item['nilai'] }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -30,10 +30,28 @@ class ProsesController extends Controller
         }
 
         // S1
+        $datas = [];
+        $temp = [];
+        foreach($perhitungan as $key => $item ) {
+            $datas[$key]['id'] = $item->id_alt;
+            $datas[$key]['bobot'] = (pow($item->pendalaman_survei, $normalisasi[0]['bobot']) * pow($item->perilaku, $normalisasi[1]['bobot']) * pow($item->kualitas_pekerjaan, $normalisasi[2]['bobot']) * pow($item->ketepatan_waktu, $normalisasi[3]['bobot']) );
+            $temp[$key] = (pow($item->pendalaman_survei, $normalisasi[0]['bobot']) * pow($item->perilaku, $normalisasi[1]['bobot']) * pow($item->kualitas_pekerjaan, $normalisasi[2]['bobot']) * pow($item->ketepatan_waktu, $normalisasi[3]['bobot']));
+        }
 
+        unset($datas[4]);
+        $totals = array_sum($temp);
 
+        // rank
+        $ranks = [];
+        foreach($datas as $key => $data){
+            $ranks[$key]['id'] = $data['id'];
+            $ranks[$key]['nilai'] = $data['bobot'] / $totals;
+        }
 
-        return view('proses.index', compact('perhitungan', 'normalisasi',));
+        // dd($ranks);
+        ksort($ranks);
+
+        return view('proses.index', compact('perhitungan', 'normalisasi','datas', 'ranks'));
     }
 
     /**
