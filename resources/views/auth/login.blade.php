@@ -46,7 +46,6 @@
         </div>
 
         <div class="my-5">
-            <a href="/auth/github/redirect" type="button" class="p-3 text-white bg-red-500 me-2 rounded-lg">Daftar dengan Github</a>
             <a href="/auth/google/redirect" type="button" class="p-3 text-white bg-red-500 rounded-lg">Daftar dengan Google</a>
         </div>
 
