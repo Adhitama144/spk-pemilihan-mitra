@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LandingPageController::class, 'index']);
 
 Route::middleware('guest')->group(function (){
     Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
