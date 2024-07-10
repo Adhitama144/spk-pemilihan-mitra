@@ -46,7 +46,7 @@ class ProviderController extends Controller
             return route('dashboard');
         } catch (\Throwable $th) {
             dd('error guys : ', $th->getMessage());
-            return redirect('/login');
+            return redirect('/');
         }
     }
 }
