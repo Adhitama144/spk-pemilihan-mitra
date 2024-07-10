@@ -45,7 +45,8 @@
 
         </div>
 
-        <div class="my-5">
+        <div class="my-5 flex gap-3">
+            <a href="/auth/google/redirect" type="button" class="p-3 text-white bg-red-500 rounded-lg">Daftar dengan akun Google</a>
             <a href="/auth/github/redirect" type="button" class="p-3 text-white bg-red-500 rounded-lg">Daftar dengan akun Github</a>
         </div>
 
