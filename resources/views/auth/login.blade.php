@@ -46,7 +46,7 @@
         </div>
 
         <div class="my-5">
-            <a href="/auth/google/redirect" type="button" class="p-3 text-white bg-red-500 rounded-lg">Daftar dengan Google</a>
+            <a href="/auth/github/redirect" type="button" class="p-3 text-white bg-red-500 rounded-lg">Daftar dengan akun Github</a>
         </div>
 
         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/register">

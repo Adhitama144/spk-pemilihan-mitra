@@ -26,7 +26,7 @@ class ProviderController extends Controller
 
             if (!$user) {
                 if (User::where('email', $userSocial->email)->exists()) {
-                    return redirect('/login')->withErrors(['form.email' => "email ini sudah terdaftar!"]);
+                    return redirect('/')->withErrors(['form.email' => "email ini sudah terdaftar dengan akun lain!"]);
                 }
 
                 $user = User::create([
@@ -34,7 +34,7 @@ class ProviderController extends Controller
                     'email' => $userSocial->getEmail(),
                     'username' => $userSocial->getNickname(),
                     'provider' => $provider,
-                    'password' => '000',
+                    'password' => '1234',
                     'provider_id' => $userSocial->getId(),
                     'provider_token' => $userSocial->token,
                 ]);
@@ -46,7 +46,7 @@ class ProviderController extends Controller
             return route('dashboard');
         } catch (\Throwable $th) {
             dd('error guys : ', $th->getMessage());
-            // return redirect('/login');
+            return redirect('/login');
         }
     }
 }
